@@ -1,7 +1,7 @@
 <template>
   <div class="card">
       <div class="card-image is-max-desktop has-text-centered">
-        <figure @click.native="goToPost(post.id)" class="post">
+        <figure @click.native="goToPost(post.id)" class="post post-containS">
           <img :src="post.url" />
         </figure>
       </div>
@@ -47,8 +47,12 @@
 }
 
 .post img {
-  width: 50vw;
-  height: 50vw;
+  width: 40vw;
+  height: 40vw;
+}
+
+.post-contain img {
+  object-fit: contain;
 }
 
 </style>
