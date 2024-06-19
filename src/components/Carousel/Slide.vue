@@ -1,18 +1,12 @@
 <template>
   <div class="slide">
     <transition name="fade" mode="out-in" duration="250">
-      <slot  />
+      <slot />
     </transition>
-    
-  </div>  
-
+  </div>
 </template>
 
-<script >
-
-
-
-</script>
+<script></script>
 <style>
 .fade-enter-active,
 .fade-leave-active {

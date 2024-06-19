@@ -14,7 +14,7 @@ export const useStorePosts = defineStore('storePosts',  {
 
       ],
       postCount: 0,
-      random: false    
+      cycle: 'sequence'   
     }
   },
   actions: {
@@ -69,7 +69,7 @@ export const useStorePosts = defineStore('storePosts',  {
       }
     },
     getCycle: (state) => {
-      return state.random
+      return state.cycle
     }
 
   }

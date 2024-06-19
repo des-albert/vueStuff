@@ -32,10 +32,10 @@
 
   const { getCycle } = storeToRefs(storePosts)
 
-  let random = false
+  let select = 'sequence'
 
   watch (getCycle, (newState) => {
-      random = newState
+      select = newState
   })
 
   const nextSlide = () => {
@@ -59,12 +59,14 @@
   }
 
   const autoPlay = () => {
-    setInterval(() => {
-      if (random)
-        randomSlide()
-      else
-        nextSlide()
-    }, timeoutDuration)
+      setInterval(() => {
+        if (select === 'random')
+          randomSlide()
+        else if (select === 'sequence')
+          nextSlide()
+        else 
+          return
+      }, timeoutDuration)
   }
   
   autoPlay()

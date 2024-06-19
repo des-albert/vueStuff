@@ -1,7 +1,7 @@
 <template>
   <div class="card">
-      <div class="card-image has-text-centered">
-        <figure @click.native="goToPost(post.id)" class="image">
+      <div class="card-image is-max-desktop has-text-centered">
+        <figure @click.native="goToPost(post.id)" class="post">
           <img :src="post.url" />
         </figure>
       </div>
@@ -38,3 +38,17 @@
 
   }
 </script>
+
+<style scoped lang="scss">
+
+.post {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.post img {
+  width: 50vw;
+  height: 50vw;
+}
+
+</style>

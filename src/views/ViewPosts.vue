@@ -1,5 +1,5 @@
 <template>
-  <div class="container is-max-desktop px-2 py-4">
+  <div class="container px-2 py-4">
     <Carousel 
       v-slot="{ currentSlide }" 
       timeout="5000"

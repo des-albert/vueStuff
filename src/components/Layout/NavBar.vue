@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar is-success"
+    class="navbar is-info"
     aria-label="main navigation"
     role="navigation"
   >
@@ -27,11 +27,14 @@
       <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': showMobileNav }" ref="navbarMenuRef">  
         <div class="navbar-end">
           <div class="control navbar-item">
+            <label class="radio"> 
+              <input type="radio" name="cycle" value="manual" v-model="select" @change="handleRadio">&nbsp;Manual
+            </label> 
             <label class="radio">
-              <input type="radio" name="cycle" value="random" v-model="cycle" @change="handleRadio">&nbsp;Random
+              <input type="radio" name="cycle" value="random" v-model="select" @change="handleRadio">&nbsp;Random
             </label> 
             <label class="radio"> 
-              <input type="radio" name="cycle" value="sequence" v-model="cycle" checked @change="handleRadio">&nbsp;Sequence
+              <input type="radio" name="cycle" value="sequence" v-model="select" checked @change="handleRadio">&nbsp;Sequence
             </label>   
           </div>
 
@@ -72,15 +75,11 @@
   const navbarMenuRef = ref(null)
   const navbarBurgerRef = ref(null)
 
-  const cycle = ref('false')
-  const { random } = storeToRefs(storePosts)
+  const select = ref('')
+  const { cycle } = storeToRefs(storePosts)
 
   const handleRadio = () => {
-
-    if (cycle.value === "random")
-      random.value = true
-    else 
-      random.value = false
+      cycle.value = select.value
   }
 
   onClickOutside(navbarMenuRef, () => {
